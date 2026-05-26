@@ -597,9 +597,9 @@ yrpStats yarrp_proc(string yarrpfile, unordered_map<ipaddress, vector<hop> > &tr
 		hop this_hop;
 		this_hop = r;
 		//traces[r.target][r.ttl] = this_hop;
-		//if (traces[r.target].size() < 255) {
+		if (traces[r.target].size() < 255) {
 			traces[r.target].push_back(this_hop);	// scamper_trace must be <= 255 hops long
-		//}
+		}
 		if(!detection){
 			timestamp = r.sec + (r.usec / 1000000.0);
 		//timestamps[r.target] = timestamp;
